@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Your host name
+HOST=ftp.example.com 
+
+# FTP username
+USER=ftpuser
+
+#Password for FTP
+PASSWORD=P@ssw0rd 
+
+ftp -inv $HOST <<EOF
+user $USER $PASSWORD
+cd /path/to/file 
+
+#insert from local to FTP
+mput *.html 
+
+#close connection to FTP
+bye 
+EOF
